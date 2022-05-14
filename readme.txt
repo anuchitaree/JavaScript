@@ -1,16 +1,16 @@
-https://github.com/anuchitaree/test1.git
+https://github.com/anuchitaree/JavaScript.git
 
 …or create a new repository on the command line
-echo "# test1" >> README.md
+echo "# JavaScript" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/anuchitaree/test1.git
+git remote add origin https://github.com/anuchitaree/JavaScript.git
 git push -u origin main
 
 
 …or push an existing repository from the command line
-git remote add origin https://github.com/anuchitaree/test1.git
+git remote add origin https://github.com/anuchitaree/JavaScript.git
 git branch -M main
 git push -u origin main
