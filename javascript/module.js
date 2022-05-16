@@ -17,4 +17,9 @@ String.prototype.remove = function (startIndex, count) {
     }
 }
 
+function getTime2() {
+    return new Date().toLocaleTimeString('en-US',
+        { hour12: false, hour: 'numeric', minute: 'numeric' }).toString();
+}
+
 export default { remove };

@@ -1,39 +1,50 @@
 'use strict'
 
-import { remove } from "./module.js";
 
+String.prototype.insert = function (index, string) {
+    if (index > 0) {
+        return this.substring(0, index) + string + this.substr(index);
+    }
+    return string + this;
+};
 
+function remove(str, startIndex, count) {
+    return str.substr(0, startIndex) + str.substr(startIndex + count);
+}
+
+String.prototype.remove = function (startIndex, count) {
+    if (this.length > 0) {
+        return this.substr(0, startIndex) + this.substr(startIndex + count);
+    }
+}
 
 // var something = "How you?";
 // something = something.insert(3, " are");
 // console.log(something)
 
+let time = '2022-10-12 12:30'
+let result = null;
 
 
-let xx = "2022-10-10 12:12";
-// console.log(yy);
 
-let datetime = "2022-10-10 12 12";
-// datetime = datetime.insert(13, ":");
-// datetime = datetime.remove(14, 1);
-datetime = remove(datetime,14, 1);
+function setTime() {
+    // check if the colon is there
+    if (result !== null) {
+        console.log(result.split(':').length);
+        if (result.split(':').length === 1) {
+            result = time;
+        }
+        else {
+            // if it is, remove the colon
+            result = time.split(':').join(' ');
+        }
+    } else {
+        result = time;
+    }
 
-console.log(datetime);
-
-/*
-// console.log('datetime');
-let date = datetime.slice(0,11);
-console.log(date);
-
-const time = datetime.replace(':', ' ');
-console.log(time);
-
-datetime = datetime.insert(3,':')
-console.log(datetime);
-
-
-if(datetime.includes(':')){
-    // console.log(time);
+    console.log(result);
 }
 
-*/
+
+setInterval(setTime, 1000);
+setTime();
